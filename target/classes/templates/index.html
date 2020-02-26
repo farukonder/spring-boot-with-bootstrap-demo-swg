@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Demo Spring Boot App For Openshift</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+</head>
+<body>
+	<div class="container">
+		<!-- Static navbar -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Home</a></li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+			<!--/.container-fluid -->
+		</nav>
+		<!-- Main component for a primary marketing message or call to action -->
+		<div class="jumbotron">
+			<div class="col-md-3 register-left">
+				<img src="../static/image/IBM_OpenShift.jpg" alt=""  height="100" width="170"/>
+				<br />
+			</div>
+			<!--Usage of models we wrote in WepAppController th:text="'Welcome to basic Bootstrap with Spring Boot created by ' + ${username} -->
+			<p>Openshift is the best choice for your devops processes in Enterprise</p>
+			
+			<div class="container">
+				<p>Submit your name for news letter</p>
+				<br></br>
+				<form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+					<div class="form-group">
+						<label for="name">Your name:</label> <input th:field="*{name}" class="form-control" id="name" placeholder="Your name" name="name">
+					</div>
+					<div class="form-group">
+						<label for="surname">Your surname:</label> <input th:field="*{surname}" class="form-control" id="surname" placeholder="Your surname" name="surname">
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- /container -->
+	<!-- Bootstrap core JavaScript
+================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="../static/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
+</body>
+</html>
